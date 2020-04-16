@@ -1,18 +1,13 @@
-let http=require("http");
+let {URL}=require("url");
+let cc=require("url")
 
-console.log(http)
+let aa=new URL("https://www.baidu.com/s?ie=UTF-8&wd=node");
+let bb=aa.searchParams
+
+console.log(bb.get("ie"));
+let xx=cc.parse("https://www.baidu.com/s?ie=UTF-8&wd=node")
+console.log(xx)
 
 
 
-let app=http.createServer(function(req,res){
 
-    res.writeHead(200,{
-        "Content-Type":"text/html;charset=utf-8"
-    })
-    res.write("hello")
-    res.end("<h1>这是自己宝店</h1>")
-})
-
-app.listen(3000,function(){
-    console.log("服务器发射成功")
-})
